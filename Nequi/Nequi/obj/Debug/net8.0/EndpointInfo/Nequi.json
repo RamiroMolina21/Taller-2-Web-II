@@ -1,0 +1,582 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Nequi",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Cuentas": {
+      "post": {
+        "tags": [
+          "Cuentas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroCuentaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroCuentaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistroCuentaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Cuentas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cuentas/{CuentaID}": {
+      "get": {
+        "tags": [
+          "Cuentas"
+        ],
+        "parameters": [
+          {
+            "name": "CuentaID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cuentas"
+        ],
+        "parameters": [
+          {
+            "name": "CuentaID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EliminarCuentaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EliminarCuentaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EliminarCuentaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cuentas"
+        ],
+        "parameters": [
+          {
+            "name": "CuentaID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActualizarCuentaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActualizarCuentaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ActualizarCuentaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transacciones": {
+      "post": {
+        "tags": [
+          "Transacciones"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transacciones"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transacciones"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transacciones"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Transacciones"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transacciones/{NumeroTransaccion}": {
+      "get": {
+        "tags": [
+          "Transacciones"
+        ],
+        "parameters": [
+          {
+            "name": "NumeroTransaccion",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActualizarCuentaDto": {
+        "type": "object",
+        "properties": {
+          "cuentaID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "contrasenaHash": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConsultaCuentaDto": {
+        "type": "object",
+        "properties": {
+          "cuentaID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConsultarTransaccionDto": {
+        "type": "object",
+        "properties": {
+          "numeroTransaccion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "cuentaOrigenID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cuentaDestinoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EliminarCuentaDto": {
+        "type": "object",
+        "properties": {
+          "cuentaID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "contrasenaHash": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistroCuentaDto": {
+        "type": "object",
+        "properties": {
+          "cuentaID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "contrasenaHash": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Transacciones": {
+        "required": [
+          "cuentaDestinoID",
+          "cuentaOrigenID",
+          "monto",
+          "numeroTransaccion",
+          "tipo"
+        ],
+        "type": "object",
+        "properties": {
+          "numeroTransaccion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "cuentaOrigenID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cuentaDestinoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          },
+          "tipo": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

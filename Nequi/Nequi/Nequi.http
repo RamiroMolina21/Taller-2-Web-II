@@ -1,0 +1,6 @@
+@Nequi_HostAddress = http://localhost:5118
+
+GET {{Nequi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
