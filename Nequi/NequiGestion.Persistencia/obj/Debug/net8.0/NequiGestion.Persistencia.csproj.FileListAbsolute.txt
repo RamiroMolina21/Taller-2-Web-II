@@ -13,3 +13,4 @@ C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Persistencia\obj\Debu
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Persistencia\obj\Debug\net8.0\refint\NequiGestion.Persistencia.dll
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Persistencia\obj\Debug\net8.0\NequiGestion.Persistencia.pdb
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Persistencia\obj\Debug\net8.0\ref\NequiGestion.Persistencia.dll
+C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Persistencia\obj\Debug\net8.0\NequiGestion.Persistencia.sourcelink.json

@@ -19,130 +19,132 @@ public class TransaccionesRepository
         {
             conexion.Open();
 
-            // Verificar si las cuentas existen antes de insertar la transacción
-            string sqlVerificar = "SELECT COUNT(*) FROM Cuentas WHERE CuentaID = @CuentaID";
+            //  Generar un número de transacción único
+            int nuevoNumeroTransaccion;
+            string sqlObtenerUltimo = "SELECT ISNULL(MAX(NumeroTransaccion), 0) + 1 FROM Transacciones";
+
+            using (var cmd = new SqlCommand(sqlObtenerUltimo, conexion))
+            {
+                nuevoNumeroTransaccion = (int)cmd.ExecuteScalar();
+            }
+
+            transaccion.NumeroTransaccion = nuevoNumeroTransaccion; // Asignar el número generado
+
+            //  Validaciones: verificar si las cuentas existen y saldo suficiente
+            string sqlVerificar = "SELECT Saldo FROM Cuentas WHERE CuentaID = @CuentaID";
+            decimal saldoCuentaOrigen;
 
             using (var comandoVerificar = new SqlCommand(sqlVerificar, conexion))
             {
-                // Verificar CuentaOrigenID
                 comandoVerificar.Parameters.AddWithValue("@CuentaID", transaccion.CuentaOrigenID);
-                int cuentaOrigenExiste = (int)comandoVerificar.ExecuteScalar();
-
-                // Verificar CuentaDestinoID
-                comandoVerificar.Parameters["@CuentaID"].Value = transaccion.CuentaDestinoID;
-                int cuentaDestinoExiste = (int)comandoVerificar.ExecuteScalar();
-
-                if (cuentaOrigenExiste == 0 || cuentaDestinoExiste == 0)
+                object resultado = comandoVerificar.ExecuteScalar();
+                if (resultado == null)
                 {
-                    throw new Exception("Una o ambas cuentas no existen en la base de datos.");
+                    throw new Exception("La cuenta de origen no existe.");
                 }
+                saldoCuentaOrigen = Convert.ToDecimal(resultado);
             }
 
-            // Si ambas cuentas existen, proceder con la inserción de la transacción
+            //  Verificar saldo suficiente
+            if (saldoCuentaOrigen < transaccion.Monto)
+            {
+                throw new Exception("Saldo insuficiente para realizar la transacción.");
+            }
+
+            //  Insertar la transacción
             string sqlInsert = @"INSERT INTO Transacciones (NumeroTransaccion, Fecha, CuentaOrigenID, CuentaDestinoID, Monto, Tipo) 
                              VALUES (@NumeroTransaccion, @Fecha, @CuentaOrigenID, @CuentaDestinoID, @Monto, @Tipo)";
 
             using (var comandoInsert = new SqlCommand(sqlInsert, conexion))
             {
                 comandoInsert.Parameters.AddWithValue("@NumeroTransaccion", transaccion.NumeroTransaccion);
-                comandoInsert.Parameters.AddWithValue("@Fecha", transaccion.Fecha ?? DateTime.Now);
+                comandoInsert.Parameters.AddWithValue("@Fecha", DateTime.Now);
                 comandoInsert.Parameters.AddWithValue("@CuentaOrigenID", transaccion.CuentaOrigenID);
                 comandoInsert.Parameters.AddWithValue("@CuentaDestinoID", transaccion.CuentaDestinoID);
                 comandoInsert.Parameters.AddWithValue("@Monto", transaccion.Monto);
                 comandoInsert.Parameters.AddWithValue("@Tipo", transaccion.Tipo);
 
-                comandoInsert.ExecuteNonQuery();   
+                comandoInsert.ExecuteNonQuery();
             }
-        }
 
-        return true;
+            return true;
+        }
     }
 
-    public Transacciones ConsultarTransaccion(int NumeroTransaccion)
+
+    public List<Transacciones> ConsultarTransacciones(int cuentaID, DateTime? desde, DateTime? hasta)
     {
+        var transacciones = new List<Transacciones>();
         using (var conexion = new SqlConnection(_cadena_conexion))
         {
-            sql = "SELECT * FROM Transacciones WHERE NumeroTransaccion = @NumeroTransaccion;";
+            string sql = "SELECT * FROM Transacciones WHERE CuentaOrigenID = @CuentaID OR CuentaDestinoID = @CuentaID";
 
-            using (var comando = new SqlCommand(sql, conexion))
+            if (desde.HasValue && hasta.HasValue)
             {
-                comando.Parameters.AddWithValue("@NumeroTransaccion", NumeroTransaccion);
-                conexion.Open();
-                var lector = comando.ExecuteReader();
+                sql += " AND Fecha BETWEEN @Desde AND @Hasta";
+            }
 
-                if (lector.Read())
+            using (var cmd = new SqlCommand(sql, conexion))
+            {
+                cmd.Parameters.AddWithValue("@CuentaID", cuentaID);
+                if (desde.HasValue && hasta.HasValue)
                 {
-                    return new Transacciones
+                    cmd.Parameters.AddWithValue("@Desde", desde.Value);
+                    cmd.Parameters.AddWithValue("@Hasta", hasta.Value);
+                }
+
+                conexion.Open();
+                using (var lector = cmd.ExecuteReader())
+                {
+                    while (lector.Read())
                     {
-                        NumeroTransaccion = Convert.ToInt32(lector["NumeroTransaccion"]),
-                        Fecha = lector["Fecha"] as DateTime?,
-                        CuentaOrigenID = Convert.ToInt32(lector["CuentaOrigenID"]),
-                        CuentaDestinoID = Convert.ToInt32(lector["CuentaDestinoID"]),
-                        Monto = Convert.ToDecimal(lector["Monto"]),
-                        Tipo = lector["Tipo"].ToString()!
-                    };
+                        transacciones.Add(new Transacciones
+                        {
+                            NumeroTransaccion = Convert.ToInt32(lector["NumeroTransaccion"]),
+                            Fecha = Convert.ToDateTime(lector["Fecha"]),
+                            CuentaOrigenID = Convert.ToInt32(lector["CuentaOrigenID"]),
+                            CuentaDestinoID = Convert.ToInt32(lector["CuentaDestinoID"]),
+                            Monto = Convert.ToDecimal(lector["Monto"]),
+                            Tipo = lector["Tipo"].ToString()!
+                        });
+                    }
                 }
             }
         }
-        return null;
+        return transacciones;
     }
 
-    public List<Transacciones> ListarTransacciones()
+
+    public List<Transacciones> ListarTodasTransacciones()
     {
         var transacciones = new List<Transacciones>();
 
         using (var conexion = new SqlConnection(_cadena_conexion))
         {
             string sql = "SELECT * FROM Transacciones";
+
             using (var comando = new SqlCommand(sql, conexion))
             {
-                conexion.Open();
-                using (var lector = comando.ExecuteReader())
-                {
-                    while (lector.Read())
-                    {
-                        transacciones.Add(new Transacciones
-                        {
-                            NumeroTransaccion = Convert.IsDBNull(lector["NumeroTransaccion"]) ? 0 : Convert.ToInt32(lector["NumeroTransaccion"]),
-                            Fecha = Convert.IsDBNull(lector["Fecha"]) ? DateTime.MinValue : Convert.ToDateTime(lector["Fecha"]),
-                            CuentaOrigenID = Convert.IsDBNull(lector["CuentaOrigenID"]) ? 0 : Convert.ToInt32(lector["CuentaOrigenID"]),
-                            CuentaDestinoID = Convert.IsDBNull(lector["CuentaDestinoID"]) ? 0 : Convert.ToInt32(lector["CuentaDestinoID"]),
-                            Monto = Convert.IsDBNull(lector["Monto"]) ? 0.0m : Convert.ToDecimal(lector["Monto"]),
-                            Tipo = Convert.IsDBNull(lector["Tipo"]) ? string.Empty : lector["Tipo"].ToString()
-                        });
-                    }
-                }
-            }
-        }
-
-        return transacciones;
-    }
-
-    public List<Transacciones> ListarTransaccionesPorNumero(int numeroTransaccion)
-    {
-        var transacciones = new List<Transacciones>();
-        using (var conexion = new SqlConnection(_cadena_conexion))
-        {
-            sql = "SELECT * FROM Transacciones WHERE NumeroTransaccion = @NumeroTransaccion";
-            using (var comando = new SqlCommand(sql, conexion))
-            {
-                comando.Parameters.AddWithValue("@NumeroTransaccion", numeroTransaccion);
                 conexion.Open();
                 var lector = comando.ExecuteReader();
+
                 while (lector.Read())
                 {
-                    transacciones.Add(new Transacciones
+                    var transaccion = new Transacciones
                     {
-                        NumeroTransaccion = Convert.ToInt32(lector["NumeroTransaccion"]),
-                        Fecha = lector["Fecha"] as DateTime?,
-                        CuentaOrigenID = Convert.ToInt32(lector["CuentaOrigenID"]),
-                        CuentaDestinoID = Convert.ToInt32(lector["CuentaDestinoID"]),
-                        Monto = Convert.ToDecimal(lector["Monto"]),
-                        Tipo = lector["Tipo"].ToString()!
-                    });
+                        NumeroTransaccion = lector["NumeroTransaccion"] != DBNull.Value ? Convert.ToInt32(lector["NumeroTransaccion"]) : 0,
+                        Fecha = lector["Fecha"] != DBNull.Value ? Convert.ToDateTime(lector["Fecha"]) : (DateTime?)null,
+                        CuentaOrigenID = lector["CuentaOrigenID"] != DBNull.Value ? Convert.ToInt32(lector["CuentaOrigenID"]) : 0,
+                        CuentaDestinoID = lector["CuentaDestinoID"] != DBNull.Value ? Convert.ToInt32(lector["CuentaDestinoID"]) : 0,
+                        Monto = lector["Monto"] != DBNull.Value ? Convert.ToDecimal(lector["Monto"]) : 0,
+                        Tipo = lector["Tipo"] != DBNull.Value ? lector["Tipo"].ToString()! : string.Empty
+                    };
+
+                    transacciones.Add(transaccion); 
                 }
             }
         }
-        return transacciones;
+
+        return transacciones; 
     }
 }

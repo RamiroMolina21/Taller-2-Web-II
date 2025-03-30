@@ -36,10 +36,27 @@ public class CuentasService {
         return _cuentasRepository.ListarTodasCuentas().Select(x => new ConsultaCuentaDto(x.CuentaID, x.Nombre, x.Apellido, x.Email, x.Telefono, x.Saldo, x.FechaCreacion)).ToList();
     }
 
-    public List<ConsultaCuentaDto> ListarCuentasPorID(int CuentaID)
+
+    public ConsultaCuentaDto ConsultarCuentaTelefono(string Telefono)
     {
-        return _cuentasRepository.ListarCuentasPorID(CuentaID).Select(x => new ConsultaCuentaDto(x.CuentaID, x.Nombre, x.Apellido, x.Email, x.Telefono, x.Saldo, x.FechaCreacion)).ToList();
-    } 
+        var cuenta = _cuentasRepository.ConsultarCuentaTelefono(Telefono);
+
+        if (cuenta != null)
+        {
+            return new ConsultaCuentaDto(
+                cuenta.CuentaID,
+                cuenta.Nombre,
+                cuenta.Apellido,
+                cuenta.Email,
+                cuenta.Telefono,
+                cuenta.Saldo,
+                cuenta.FechaCreacion);
+        }
+
+        return null;
+    }
+
+
 
     public ConsultaCuentaDto ConsultarCuenta(int cuentaID)
     {
@@ -83,9 +100,9 @@ public class CuentasService {
     }
 
 
-    public bool EliminarCuenta(int cuentaID)
+    public bool EliminarCuenta(string Telefono)
     {
-        var cuenta = _cuentasRepository.ConsultarCuenta(cuentaID);
+        var cuenta = _cuentasRepository.ConsultarCuentaTelefono(Telefono);
 
         if (cuenta == null)
         {
@@ -97,16 +114,16 @@ public class CuentasService {
             return false; // No se permite eliminar cuentas con más de $50,000 de saldo
         }
 
-        return _cuentasRepository.EliminarCuenta(cuentaID);  
+        return _cuentasRepository.EliminarCuenta(Telefono);  
     }
 
-    public decimal ObtenerSaldo(int cuentaID)
+    public decimal ObtenerSaldo(string telefono)
     {
-        var cuenta = _cuentasRepository.ConsultarCuenta(cuentaID);
+        var cuenta = _cuentasRepository.ConsultarCuentaTelefono(telefono);
 
         if (cuenta == null)
         {
-            throw new KeyNotFoundException($"No se encontró la cuenta con ID {cuentaID}");
+            throw new KeyNotFoundException($"No se encontró la cuenta con telefono {telefono}");
         }
 
         return cuenta.Saldo;

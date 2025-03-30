@@ -8,7 +8,7 @@ namespace NequiGestion.Entidades;
 
 public class Transacciones {
 
-    public required int NumeroTransaccion { get; set; }
+    public int NumeroTransaccion { get; set; }//autogenerado
     public DateTime? Fecha { get; set; }
     public required int CuentaOrigenID { get; set; }
     public required int CuentaDestinoID { get; set; }

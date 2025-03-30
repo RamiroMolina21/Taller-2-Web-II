@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NequiGestion.Entidades;
 using NequiGestion.Logica.Dtos;
+using NequiGestion.Logica.Exceptions;
 using NequiGestion.Logica.Services;
 using NequiGestion.Persistencia;
 
@@ -13,60 +14,53 @@ namespace Nequi.Controllers
     {
 
         private readonly TransaccionesService _transaccionesService = new();
-        [HttpPost]
-        public IActionResult RegistrarTransaccion(Transacciones transaccion)
+
+
+        // 🟢 Registrar una transacción
+        [HttpPost("registrar")]
+        public IActionResult RegistrarTransaccion([FromBody] RegistrarTransaccionDto transaccionDto)
         {
-            decimal montoMinimo = 1000;
-            decimal montoMaximo = 5000000;
-
-            // Validar el monto antes de continuar
-            if (transaccion.Monto < montoMinimo || transaccion.Monto > montoMaximo)
+            try
             {
-                return BadRequest(new { mensaje = $"El monto debe estar entre {montoMinimo:C} y {montoMaximo:C} COP." });
+                bool resultado = _transaccionesService.RegistrarTransaccion(transaccionDto);
+                if (resultado)
+                {
+                    return Ok(new { mensaje = "Transacción registrada exitosamente." });
+                }
+                else
+                {
+                    return BadRequest(new { mensaje = "Error al registrar la transacción." });
+                }
             }
-
-            // Convertir la entidad Transacciones a DTO
-            var transaccionDto = new RegistrarTransaccionDto(
-                transaccion.NumeroTransaccion,
-                transaccion.Fecha,
-                transaccion.CuentaOrigenID,
-                transaccion.CuentaDestinoID,
-                transaccion.Monto,
-                transaccion.Tipo
-            );
-
-            // Intentar registrar la transacción con el DTO
-            bool resultado = _transaccionesService.RegistrarTransaccion(transaccionDto);
-
-            if (!resultado)
+            catch (LogicaNegocioException ex)
             {
-                return StatusCode(500, new { mensaje = "No se pudo registrar la transacción." });
+                return BadRequest(new { mensaje = ex.Message });
             }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { mensaje = "Error interno del servidor.", error = ex.Message });
+            }
+        }
 
-            return Ok(new { mensaje = "Transacción registrada con éxito." });
-        }  
-
+        // 🔍 Consultar transacciones de una cuenta
+        [HttpGet("consultar/{cuentaID}")]
+        public IActionResult ConsultarTransacciones(int cuentaID, [FromQuery] DateTime? desde, [FromQuery] DateTime? hasta)
+        {
+            try
+            {
+                var transacciones = _transaccionesService.ConsultarTransacciones(cuentaID, desde, hasta);
+                return Ok(transacciones);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { mensaje = "Error interno del servidor.", error = ex.Message });
+            }
+        }
 
         [HttpGet]
         public ActionResult<List<ConsultarTransaccionDto>> ListarTransacciones()
         {
             return Ok(_transaccionesService.ListarTransacciones());
-
-        }
-
-        [HttpGet("{NumeroTransaccion}")]
-        public ActionResult<List<ConsultarTransaccionDto>> ConsultarTransaccion(int NumeroTransaccion)
-        {
-            if (NumeroTransaccion == null)
-            {
-
-                return NotFound("La cuenta no existe PAILAS");
-
-            }
-            else
-            {
-                return Ok(_transaccionesService.ConsultarTransaccion(NumeroTransaccion));
-            }
         }
 
     }

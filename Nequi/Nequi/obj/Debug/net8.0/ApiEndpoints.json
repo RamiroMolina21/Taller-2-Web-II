@@ -47,58 +47,6 @@
   },
   {
     "ContainingType": "Nequi.Controllers.CuentasController",
-    "Method": "ConsultarCuenta",
-    "RelativePath": "api/Cuentas/{CuentaID}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "CuentaID",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[NequiGestion.Logica.Dtos.ConsultaCuentaDto, NequiGestion.Logica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Nequi.Controllers.CuentasController",
-    "Method": "EliminarCuenta",
-    "RelativePath": "api/Cuentas/{CuentaID}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "CuentaID",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[NequiGestion.Logica.Dtos.EliminarCuentaDto, NequiGestion.Logica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Nequi.Controllers.CuentasController",
     "Method": "ActualizarCuenta",
     "RelativePath": "api/Cuentas/{CuentaID}",
     "HttpMethod": "PUT",
@@ -129,20 +77,82 @@
     ]
   },
   {
-    "ContainingType": "Nequi.Controllers.TransaccionesController",
-    "Method": "RegistrarTransaccion",
-    "RelativePath": "api/Transacciones",
-    "HttpMethod": "POST",
+    "ContainingType": "Nequi.Controllers.CuentasController",
+    "Method": "EliminarCuenta",
+    "RelativePath": "api/Cuentas/{Telefono}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "transaccion",
-        "Type": "NequiGestion.Entidades.Transacciones",
+        "Name": "Telefono",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[NequiGestion.Logica.Dtos.EliminarCuentaDto, NequiGestion.Logica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Nequi.Controllers.CuentasController",
+    "Method": "ConsultarCuenta",
+    "RelativePath": "api/Cuentas/id/{CuentaID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "CuentaID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[NequiGestion.Logica.Dtos.ConsultaCuentaDto, NequiGestion.Logica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Nequi.Controllers.CuentasController",
+    "Method": "ConsultarCuentaPorTelefono",
+    "RelativePath": "api/Cuentas/telefono/{Telefono}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Telefono",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[NequiGestion.Logica.Dtos.ConsultaCuentaDto, NequiGestion.Logica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Nequi.Controllers.TransaccionesController",
@@ -166,28 +176,44 @@
   },
   {
     "ContainingType": "Nequi.Controllers.TransaccionesController",
-    "Method": "ConsultarTransaccion",
-    "RelativePath": "api/Transacciones/{NumeroTransaccion}",
+    "Method": "ConsultarTransacciones",
+    "RelativePath": "api/Transacciones/consultar/{cuentaID}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "NumeroTransaccion",
+        "Name": "cuentaID",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "desde",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "hasta",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Nequi.Controllers.TransaccionesController",
+    "Method": "RegistrarTransaccion",
+    "RelativePath": "api/Transacciones/registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "transaccionDto",
+        "Type": "NequiGestion.Logica.Dtos.RegistrarTransaccionDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[NequiGestion.Logica.Dtos.ConsultarTransaccionDto, NequiGestion.Logica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   }
 ]

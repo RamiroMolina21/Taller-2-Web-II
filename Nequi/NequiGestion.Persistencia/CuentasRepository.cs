@@ -74,26 +74,25 @@ public class CuentasRepository {
 
     }
 
-    public List<Cuentas> ListarCuentasPorID(int cuentaID) {
 
-        var cuentas = new List<Cuentas>();
+    public Cuentas ConsultarCuentaTelefono(string Telefono)
+    {
 
         using (var conexion = new SqlConnection(_cadena_conexion))
         {
 
-            sql = "SELECT * FROM Cuentas WHERE CuentaID =@CuentaID";
+            sql = "SELECT CuentaID, Nombre, Apellido, Email, Telefono, Saldo, FechaCreacion FROM Cuentas WHERE Telefono = @Telefono;";
 
             using (var comando = new SqlCommand(sql, conexion))
             {
 
-                comando.Parameters.AddWithValue("@CuentaID", cuentaID);
+                comando.Parameters.AddWithValue("@Telefono", Telefono);
                 conexion.Open();
                 var lector = comando.ExecuteReader();
 
-
                 while (lector.Read())
                 {
-                
+
                     var cuenta = new Cuentas
                     {
                         CuentaID = Convert.ToInt32(lector["CuentaID"].ToString()),
@@ -103,19 +102,19 @@ public class CuentasRepository {
                         Telefono = lector["Telefono"].ToString(),
                         Saldo = Convert.ToDecimal(lector["Saldo"].ToString()),
                         FechaCreacion = DateTime.Parse(lector["FechaCreacion"].ToString()),
-                        ContrasenaHash = lector["ContrasenaHash"].ToString() 
                     };
-                    cuentas.Add(cuenta);
+                    return cuenta;
 
                 }
 
             }
         }
 
+        return null;
 
-
-        return cuentas;
     }
+
+
 
     public List<Cuentas> ListarTodasCuentas()
     {
@@ -161,7 +160,7 @@ public class CuentasRepository {
         return cuentas;
     }
 
-    public bool EliminarCuenta(int CuentaID)
+    public bool EliminarCuenta(string Telefono)
     {
         using (var conexion = new SqlConnection(_cadena_conexion))
         {
@@ -170,14 +169,14 @@ public class CuentasRepository {
             // Primero, eliminar las transacciones asociadas
             using (var comandoTransacciones = new SqlCommand("DELETE FROM Transacciones WHERE CuentaOrigenID = @CuentaID OR CuentaDestinoID = @CuentaID", conexion))
             {
-                comandoTransacciones.Parameters.AddWithValue("@CuentaID", CuentaID);
+                comandoTransacciones.Parameters.AddWithValue("@CuentaID", Telefono);
                 comandoTransacciones.ExecuteNonQuery();
             }
 
             // Ahora sí, eliminar la cuenta
-            using (var comandoCuenta = new SqlCommand("DELETE FROM Cuentas WHERE CuentaID = @CuentaID", conexion))
+            using (var comandoCuenta = new SqlCommand("DELETE FROM Cuentas WHERE Telefono = @Telefono", conexion))
             {
-                comandoCuenta.Parameters.AddWithValue("@CuentaID", CuentaID);
+                comandoCuenta.Parameters.AddWithValue("@Telefono", Telefono);
                 return comandoCuenta.ExecuteNonQuery() > 0;
             }
         }

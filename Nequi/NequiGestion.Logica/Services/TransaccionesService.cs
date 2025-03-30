@@ -11,50 +11,37 @@ namespace NequiGestion.Logica.Services;
 
 public class TransaccionesService
 {
-
-    private readonly TransaccionesRepository _transaccionesRepository = new TransaccionesRepository();
+    private readonly TransaccionesRepository _transaccionesRepository = new();
 
     public bool RegistrarTransaccion(RegistrarTransaccionDto transaccionDto)
     {
-
         var transaccion = new Transacciones
         {
-            NumeroTransaccion = transaccionDto.NumeroTransaccion,
-            Fecha = DateTime.Now,
             CuentaOrigenID = transaccionDto.CuentaOrigenID,
             CuentaDestinoID = transaccionDto.CuentaDestinoID,
             Monto = transaccionDto.Monto,
-            Tipo = transaccionDto.Tipo
+            Tipo = "salida"
         };
         return _transaccionesRepository.RegistrarTransaccion(transaccion);
     }
 
+    public List<ConsultarTransaccionDto> ConsultarTransacciones(int cuentaID, DateTime? desde, DateTime? hasta)
+    {
+        return _transaccionesRepository.ConsultarTransacciones(cuentaID, desde, hasta)
+               .Select(x => new ConsultarTransaccionDto(x.NumeroTransaccion, x.Fecha ?? DateTime.MinValue, x.CuentaOrigenID, x.CuentaDestinoID, x.Monto, x.Tipo))
+               .ToList();
+    }
+
     public List<ConsultarTransaccionDto> ListarTransacciones()
     {
-        return _transaccionesRepository.ListarTransacciones().Select(x => new ConsultarTransaccionDto(x.NumeroTransaccion, x.Fecha, x.CuentaOrigenID, x.CuentaDestinoID, x.Monto, x.Tipo)).ToList();
+        return _transaccionesRepository.ListarTodasTransacciones()
+            .Select(x => new ConsultarTransaccionDto(
+                x.NumeroTransaccion,
+                x.Fecha ?? DateTime.MinValue, // Aquí se maneja el valor nulo
+                x.CuentaOrigenID,
+                x.CuentaDestinoID,
+                x.Monto,
+                x.Tipo
+            )).ToList();
     }
-
-    public List<ConsultarTransaccionDto> ListarTransaccionesPorCuenta(int NumeroTransaccion)
-    {
-        return _transaccionesRepository.ListarTransaccionesPorNumero(NumeroTransaccion).Select(x => new ConsultarTransaccionDto(x.NumeroTransaccion, x.Fecha, x.CuentaOrigenID, x.CuentaDestinoID, x.Monto, x.Tipo)).ToList();
-    }
-
-    public ConsultarTransaccionDto ConsultarTransaccion(int numeroTransaccion)
-    {
-        var transaccion = _transaccionesRepository.ConsultarTransaccion(numeroTransaccion);
-
-        if (transaccion != null)
-        {
-            return new ConsultarTransaccionDto(
-                transaccion.NumeroTransaccion,
-                transaccion.Fecha,
-                transaccion.CuentaOrigenID,
-                transaccion.CuentaDestinoID,
-                transaccion.Monto,
-                transaccion.Tipo);
-        }
-
-        return null;
-    }
-
 }

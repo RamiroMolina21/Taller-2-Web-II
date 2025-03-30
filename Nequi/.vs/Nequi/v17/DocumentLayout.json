@@ -7,40 +7,48 @@
       "RelativeMoniker": "D:0:0:{CC0B5638-AFF2-4A8F-B2CF-F86029B78812}|NequiGestion.Persistencia\\NequiGestion.Persistencia.csproj|solutionrelative:nequigestion.persistencia\\transaccionesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0464CE76-3CA2-4D19-823B-7E2418F5EF3D}|Nequi\\Nequi.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequi\\controllers\\cuentascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0464CE76-3CA2-4D19-823B-7E2418F5EF3D}|Nequi\\Nequi.csproj|solutionrelative:nequi\\controllers\\cuentascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\services\\transaccionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\services\\transaccionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0464CE76-3CA2-4D19-823B-7E2418F5EF3D}|Nequi\\Nequi.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequi\\controllers\\transaccionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0464CE76-3CA2-4D19-823B-7E2418F5EF3D}|Nequi\\Nequi.csproj|solutionrelative:nequi\\controllers\\transaccionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC0B5638-AFF2-4A8F-B2CF-F86029B78812}|NequiGestion.Persistencia\\NequiGestion.Persistencia.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.persistencia\\cuentasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC0B5638-AFF2-4A8F-B2CF-F86029B78812}|NequiGestion.Persistencia\\NequiGestion.Persistencia.csproj|solutionrelative:nequigestion.persistencia\\cuentasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0464CE76-3CA2-4D19-823B-7E2418F5EF3D}|Nequi\\Nequi.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequi\\controllers\\cuentascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0464CE76-3CA2-4D19-823B-7E2418F5EF3D}|Nequi\\Nequi.csproj|solutionrelative:nequi\\controllers\\cuentascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\services\\cuentasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\services\\cuentasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\services\\transaccionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\services\\transaccionesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\dtos\\actualizarcuentadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\dtos\\actualizarcuentadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC0B5638-AFF2-4A8F-B2CF-F86029B78812}|NequiGestion.Persistencia\\NequiGestion.Persistencia.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.persistencia\\cuentasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC0B5638-AFF2-4A8F-B2CF-F86029B78812}|NequiGestion.Persistencia\\NequiGestion.Persistencia.csproj|solutionrelative:nequigestion.persistencia\\cuentasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\dtos\\registrartransacciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\dtos\\registrartransacciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\dtos\\consultartransacciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\dtos\\consultartransacciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C6D2E6F2-D0E4-464E-B298-146F194F89E7}|NequiGestion.Entidades\\NequiGestion.Entidades.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.entidades\\transacciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6D2E6F2-D0E4-464E-B298-146F194F89E7}|NequiGestion.Entidades\\NequiGestion.Entidades.csproj|solutionrelative:nequigestion.entidades\\transacciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\dtos\\consultartransacciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\dtos\\consultartransacciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\exceptions\\logicanegocioexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\exceptions\\logicanegocioexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\dtos\\consultacuentadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\dtos\\consultacuentadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.logica\\dtos\\actualizarcuentadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D8AA725-506C-4FBE-AF47-85C09A20EE6D}|NequiGestion.Logica\\NequiGestion.Logica.csproj|solutionrelative:nequigestion.logica\\dtos\\actualizarcuentadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6D2E6F2-D0E4-464E-B298-146F194F89E7}|NequiGestion.Entidades\\NequiGestion.Entidades.csproj|c:\\users\\ramiro\\desktop\\taller 2 web ii\\nequi\\nequigestion.entidades\\cuentas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,28 +82,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CuentasService.cs",
-              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\CuentasService.cs",
-              "RelativeDocumentMoniker": "NequiGestion.Logica\\Services\\CuentasService.cs",
-              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\CuentasService.cs",
-              "RelativeToolTip": "NequiGestion.Logica\\Services\\CuentasService.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAcwHAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T01:19:17.764Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "ConsultarTransaccionDto.cs",
               "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\ConsultarTransaccionDto.cs",
               "RelativeDocumentMoniker": "NequiGestion.Logica\\Dtos\\ConsultarTransaccionDto.cs",
               "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\ConsultarTransaccionDto.cs",
               "RelativeToolTip": "NequiGestion.Logica\\Dtos\\ConsultarTransaccionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T00:39:34.314Z"
+              "WhenOpened": "2025-03-25T00:39:34.314Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -105,34 +101,35 @@
               "RelativeDocumentMoniker": "Nequi\\Controllers\\TransaccionesController.cs",
               "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\Controllers\\TransaccionesController.cs",
               "RelativeToolTip": "Nequi\\Controllers\\TransaccionesController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwC4AAAALAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAowD8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T01:04:59.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegistrarTransaccionDto.cs",
-              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
-              "RelativeDocumentMoniker": "NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
-              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
-              "RelativeToolTip": "NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CuentasService.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\CuentasService.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Logica\\Services\\CuentasService.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\CuentasService.cs",
+              "RelativeToolTip": "NequiGestion.Logica\\Services\\CuentasService.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwCQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T00:38:41.514Z"
+              "WhenOpened": "2025-03-25T01:19:17.764Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TransaccionesService.cs",
-              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\TransaccionesService.cs",
-              "RelativeDocumentMoniker": "NequiGestion.Logica\\Services\\TransaccionesService.cs",
-              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\TransaccionesService.cs",
-              "RelativeToolTip": "NequiGestion.Logica\\Services\\TransaccionesService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "Transacciones.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Transacciones.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Entidades\\Transacciones.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Transacciones.cs",
+              "RelativeToolTip": "NequiGestion.Entidades\\Transacciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T00:51:57.167Z",
+              "WhenOpened": "2025-03-24T14:36:11.065Z",
               "EditorCaption": ""
             },
             {
@@ -143,40 +140,105 @@
               "RelativeDocumentMoniker": "NequiGestion.Persistencia\\TransaccionesRepository.cs",
               "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Persistencia\\TransaccionesRepository.cs",
               "RelativeToolTip": "NequiGestion.Persistencia\\TransaccionesRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAADUAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAAI4AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T05:01:53.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CuentasController.cs",
-              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\Controllers\\CuentasController.cs",
-              "RelativeDocumentMoniker": "Nequi\\Controllers\\CuentasController.cs",
-              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\Controllers\\CuentasController.cs",
-              "RelativeToolTip": "Nequi\\Controllers\\CuentasController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAowC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T01:42:23.466Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CuentasRepository.cs",
               "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Persistencia\\CuentasRepository.cs",
               "RelativeDocumentMoniker": "NequiGestion.Persistencia\\CuentasRepository.cs",
               "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Persistencia\\CuentasRepository.cs",
               "RelativeToolTip": "NequiGestion.Persistencia\\CuentasRepository.cs",
-              "ViewState": "AgIAALwAAAAAAAAAAAAAAJkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAwwKAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T00:58:42.522Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CuentasController.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\Controllers\\CuentasController.cs",
+              "RelativeDocumentMoniker": "Nequi\\Controllers\\CuentasController.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\Controllers\\CuentasController.cs",
+              "RelativeToolTip": "Nequi\\Controllers\\CuentasController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T01:42:23.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransaccionesService.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\TransaccionesService.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Logica\\Services\\TransaccionesService.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Services\\TransaccionesService.cs",
+              "RelativeToolTip": "NequiGestion.Logica\\Services\\TransaccionesService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAUwCcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T00:51:57.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "RegistrarTransaccionDto.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
+              "RelativeToolTip": "NequiGestion.Logica\\Dtos\\RegistrarTransaccionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T00:38:41.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LogicaNegocioException.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Exceptions\\LogicaNegocioException.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Logica\\Exceptions\\LogicaNegocioException.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Exceptions\\LogicaNegocioException.cs",
+              "RelativeToolTip": "NequiGestion.Logica\\Exceptions\\LogicaNegocioException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:02:37.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Cuentas.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Cuentas.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Entidades\\Cuentas.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Cuentas.cs",
+              "RelativeToolTip": "NequiGestion.Entidades\\Cuentas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T14:28:53.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ConsultaCuentaDto.cs",
+              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\ConsultaCuentaDto.cs",
+              "RelativeDocumentMoniker": "NequiGestion.Logica\\Dtos\\ConsultaCuentaDto.cs",
+              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\ConsultaCuentaDto.cs",
+              "RelativeToolTip": "NequiGestion.Logica\\Dtos\\ConsultaCuentaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T16:45:55.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ActualizarCuentaDto.cs",
               "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\ActualizarCuentaDto.cs",
               "RelativeDocumentMoniker": "NequiGestion.Logica\\Dtos\\ActualizarCuentaDto.cs",
@@ -189,31 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Cuentas.cs",
-              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Cuentas.cs",
-              "RelativeDocumentMoniker": "NequiGestion.Entidades\\Cuentas.cs",
-              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Cuentas.cs",
-              "RelativeToolTip": "NequiGestion.Entidades\\Cuentas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:28:53.702Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Transacciones.cs",
-              "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Transacciones.cs",
-              "RelativeDocumentMoniker": "NequiGestion.Entidades\\Transacciones.cs",
-              "ToolTip": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Entidades\\Transacciones.cs",
-              "RelativeToolTip": "NequiGestion.Entidades\\Transacciones.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:36:11.065Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\appsettings.json",
               "RelativeDocumentMoniker": "Nequi\\appsettings.json",
@@ -225,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "EliminarCuentaDto.cs",
               "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\NequiGestion.Logica\\Dtos\\EliminarCuentaDto.cs",
               "RelativeDocumentMoniker": "NequiGestion.Logica\\Dtos\\EliminarCuentaDto.cs",
@@ -237,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ramiro\\Desktop\\Taller 2 Web II\\Nequi\\Nequi\\Program.cs",
               "RelativeDocumentMoniker": "Nequi\\Program.cs",

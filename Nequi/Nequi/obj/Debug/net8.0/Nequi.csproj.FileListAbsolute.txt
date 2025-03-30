@@ -85,3 +85,4 @@ C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\Nequi\bin\Debug\net8.0\NequiGestio
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\Nequi\bin\Debug\net8.0\NequiGestion.Logica.pdb
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\Nequi\bin\Debug\net8.0\NequiGestion.Entidades.pdb
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\Nequi\bin\Debug\net8.0\NequiGestion.Persistencia.pdb
+C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\Nequi\obj\Debug\net8.0\Nequi.sourcelink.json

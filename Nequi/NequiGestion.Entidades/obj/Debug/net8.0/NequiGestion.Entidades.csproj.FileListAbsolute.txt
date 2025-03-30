@@ -9,3 +9,4 @@ C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Entidades\obj\Debug\n
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Entidades\obj\Debug\net8.0\refint\NequiGestion.Entidades.dll
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Entidades\obj\Debug\net8.0\NequiGestion.Entidades.pdb
 C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Entidades\obj\Debug\net8.0\ref\NequiGestion.Entidades.dll
+C:\Users\Ramiro\Desktop\Taller 2 Web II\Nequi\NequiGestion.Entidades\obj\Debug\net8.0\NequiGestion.Entidades.sourcelink.json

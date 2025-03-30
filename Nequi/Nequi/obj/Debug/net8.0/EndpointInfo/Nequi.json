@@ -89,7 +89,7 @@
         }
       }
     },
-    "/api/Cuentas/{CuentaID}": {
+    "/api/Cuentas/id/{CuentaID}": {
       "get": {
         "tags": [
           "Cuentas"
@@ -136,19 +136,68 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Cuentas/telefono/{Telefono}": {
+      "get": {
+        "tags": [
+          "Cuentas"
+        ],
+        "parameters": [
+          {
+            "name": "Telefono",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConsultaCuentaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Cuentas/{Telefono}": {
       "delete": {
         "tags": [
           "Cuentas"
         ],
         "parameters": [
           {
-            "name": "CuentaID",
+            "name": "Telefono",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -183,7 +232,9 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/Cuentas/{CuentaID}": {
       "put": {
         "tags": [
           "Cuentas"
@@ -242,7 +293,7 @@
         }
       }
     },
-    "/api/Transacciones": {
+    "/api/Transacciones/registrar": {
       "post": {
         "tags": [
           "Transacciones"
@@ -251,17 +302,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Transacciones"
+                "$ref": "#/components/schemas/RegistrarTransaccionDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Transacciones"
+                "$ref": "#/components/schemas/RegistrarTransaccionDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Transacciones"
+                "$ref": "#/components/schemas/RegistrarTransaccionDto"
               }
             }
           }
@@ -271,59 +322,51 @@
             "description": "OK"
           }
         }
-      },
-      "get": {
-        "tags": [
-          "Transacciones"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ConsultarTransaccionDto"
-                  }
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/api/Transacciones/{NumeroTransaccion}": {
+    "/api/Transacciones/consultar/{cuentaID}": {
       "get": {
         "tags": [
           "Transacciones"
         ],
         "parameters": [
           {
-            "name": "NumeroTransaccion",
+            "name": "cuentaID",
             "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "desde",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "hasta",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Transacciones": {
+      "get": {
+        "tags": [
+          "Transacciones"
         ],
         "responses": {
           "200": {
@@ -439,8 +482,7 @@
           },
           "fecha": {
             "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "format": "date-time"
           },
           "cuentaOrigenID": {
             "type": "integer",
@@ -500,6 +542,24 @@
         },
         "additionalProperties": false
       },
+      "RegistrarTransaccionDto": {
+        "type": "object",
+        "properties": {
+          "cuentaOrigenID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cuentaDestinoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "monto": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "RegistroCuentaDto": {
         "type": "object",
         "properties": {
@@ -533,44 +593,6 @@
             "nullable": true
           },
           "contrasenaHash": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Transacciones": {
-        "required": [
-          "cuentaDestinoID",
-          "cuentaOrigenID",
-          "monto",
-          "numeroTransaccion",
-          "tipo"
-        ],
-        "type": "object",
-        "properties": {
-          "numeroTransaccion": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "fecha": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "cuentaOrigenID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "cuentaDestinoID": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "monto": {
-            "type": "number",
-            "format": "double"
-          },
-          "tipo": {
             "type": "string",
             "nullable": true
           }

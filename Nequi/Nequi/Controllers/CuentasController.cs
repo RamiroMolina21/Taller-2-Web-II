@@ -28,7 +28,7 @@ public class CuentasController : ControllerBase {
 
     }
 
-    [HttpGet("{CuentaID}")]
+    [HttpGet("id/{CuentaID}")]
     public ActionResult<List<ConsultaCuentaDto>> ConsultarCuenta(int CuentaID)
     {
         if(CuentaID == null)
@@ -45,19 +45,33 @@ public class CuentasController : ControllerBase {
             
     }
 
-    [HttpDelete("{CuentaID}")]
-    public ActionResult<List<EliminarCuentaDto>> EliminarCuenta(int CuentaID)
+    [HttpGet("telefono/{Telefono}")]
+    public ActionResult<List<ConsultaCuentaDto>> ConsultarCuentaPorTelefono(string Telefono)
+    {
+        if (Telefono == null)
+        {
+            return NotFound("La cuenta no existe PAILAS");
+        }
+        else
+        {
+            return Ok(_cuentasService.ConsultarCuentaTelefono(Telefono));
+        }
+
+    }
+
+    [HttpDelete("{Telefono}")]
+    public ActionResult<List<EliminarCuentaDto>> EliminarCuenta(string Telefono)
     {
         const decimal LIMITE_SALDO = 5000m; // Declarar la constante
 
-        var saldo = _cuentasService.ObtenerSaldo(CuentaID);
+        var saldo = _cuentasService.ObtenerSaldo(Telefono);
 
         if (saldo > LIMITE_SALDO)
         {
-            return BadRequest($"No se puede eliminar la cuenta {CuentaID} porque su saldo es mayor a {LIMITE_SALDO}.");
+            return BadRequest($"No se puede eliminar la cuenta {Telefono} porque su saldo es mayor a {LIMITE_SALDO}.");
         }
 
-        var resultado = _cuentasService.EliminarCuenta(CuentaID);
+        var resultado = _cuentasService.EliminarCuenta(Telefono);
         return Ok(resultado);
     } 
 
