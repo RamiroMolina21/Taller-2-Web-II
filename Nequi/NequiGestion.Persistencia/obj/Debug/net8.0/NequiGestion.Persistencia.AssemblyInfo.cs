@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NequiGestion.Persistencia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02dfc995def937ec20017ed34bd494c3aa6b9642")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b279df78780377af7aabe17e6e8ac7f983b996ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("NequiGestion.Persistencia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NequiGestion.Persistencia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

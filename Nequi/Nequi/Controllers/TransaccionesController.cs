@@ -16,7 +16,6 @@ namespace Nequi.Controllers
         private readonly TransaccionesService _transaccionesService = new();
 
 
-        // 🟢 Registrar una transacción
         [HttpPost("registrar")]
         public IActionResult RegistrarTransaccion([FromBody] RegistrarTransaccionDto transaccionDto)
         {
@@ -40,9 +39,9 @@ namespace Nequi.Controllers
             {
                 return StatusCode(500, new { mensaje = "Error interno del servidor.", error = ex.Message });
             }
-        }
+        }  
 
-        // 🔍 Consultar transacciones de una cuenta
+    
         [HttpGet("consultar/{cuentaID}")]
         public IActionResult ConsultarTransacciones(int cuentaID, [FromQuery] DateTime? desde, [FromQuery] DateTime? hasta)
         {
