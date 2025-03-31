@@ -13,7 +13,6 @@ namespace NequiGestion.Logica.Dtos
         string Apellido,
         string Email,
         string Telefono,
-        decimal Saldo,
         string ContrasenaHash
         );
 

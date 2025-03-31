@@ -119,11 +119,11 @@ public class CuentasController : ControllerBase {
 
         if (actualizado)
         {
-            return Ok("Cuenta actualizada correctamente.");
+            return Ok("Cuenta actualizada correctamente.");  
         }
         else
         {
-            return NotFound("La cuenta no existe."); 
+            return NotFound("La cuenta no existe.");    
         } 
     }
 

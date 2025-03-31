@@ -190,8 +190,7 @@ public class CuentasRepository {
                 SET Nombre = @Nombre, 
                     Apellido = @Apellido, 
                     Email = @Email, 
-                    Telefono = @Telefono, 
-                    Saldo = @Saldo, 
+                    Telefono = @Telefono,  
                     FechaCreacion = @FechaCreacion, 
                     ContrasenaHash = @ContrasenaHash 
                 WHERE CuentaID = @CuentaID";
@@ -203,7 +202,6 @@ public class CuentasRepository {
                 comando.Parameters.AddWithValue("@Apellido", cuenta.Apellido);
                 comando.Parameters.AddWithValue("@Email", cuenta.Email);
                 comando.Parameters.AddWithValue("@Telefono", cuenta.Telefono);
-                comando.Parameters.AddWithValue("@Saldo", cuenta.Saldo);
                 comando.Parameters.AddWithValue("@FechaCreacion", cuenta.FechaCreacion);
                 comando.Parameters.AddWithValue("@ContrasenaHash", cuenta.ContrasenaHash);
 

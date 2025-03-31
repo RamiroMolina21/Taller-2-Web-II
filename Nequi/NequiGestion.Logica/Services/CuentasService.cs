@@ -90,7 +90,6 @@ public class CuentasService {
             cuentaExistente.Apellido = cuentaDto.Apellido;
             cuentaExistente.Email = cuentaDto.Email;
             cuentaExistente.Telefono = cuentaDto.Telefono;
-            cuentaExistente.Saldo = cuentaDto.Saldo;
             cuentaExistente.ContrasenaHash = cuentaDto.ContrasenaHash;
 
             return _cuentasRepository.ActualizarCuenta(cuentaExistente);
